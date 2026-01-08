@@ -144,10 +144,9 @@ private fun TopBar(
     onCartClick: () -> Unit
 ) {
     TopAppBar(
-        title = { Text("Shopping Cart Demo") },
+        title = { Text("Shopping Cart") },
         actions = {
 
-            // Badge panier
             IconButton(onClick = onCartClick) {
                 BadgedBox(
                     badge = {
@@ -171,35 +170,35 @@ private fun ProductCatalog(cartManager: ShoppingCartManager) {
         listOf(
             SimpleProduct(
                 "1", "Laptop Pro", 1299.99, description = "Powerful portable computer",
-                imageRes = R.drawable.emojitest
+                imageRes = R.drawable.laptopproimage
             ),
             SimpleProduct(
                 "2", "Wireless Mouse", 29.99, description = "Ergonomic and precise",
-                imageRes = R.drawable.emojitest
+                imageRes = R.drawable.mouseimage
             ),
             SimpleProduct(
                 "3", "Mechanical Keyboard", 149.99, description = "Cherry MX switches",
-                imageRes = R.drawable.emojitest
+                imageRes = R.drawable.keyboardimage
             ),
             SimpleProduct(
                 "4", "27\" Monitor", 399.99, description = "4K HDR Display",
-                imageRes = R.drawable.emojitest
+                imageRes = R.drawable.monitorimage
             ),
             SimpleProduct(
                 "5", "HD Webcam", 79.99, description = "1080p 60fps",
-                imageRes = R.drawable.emojitest
+                imageRes = R.drawable.webcamimage
             ),
             SimpleProduct(
                 "6", "Headphones", 199.99, description = "Active noise cancellation",
-                imageRes = R.drawable.emojitest
+                imageRes = R.drawable.headphoneimage
             ),
             SimpleProduct(
                 "7", "USB-C Hub", 49.99, description = "7 ports connectivity",
-                imageRes = R.drawable.emojitest
+                imageRes = R.drawable.usbcimage
             ),
             SimpleProduct(
                 "8", "XL Mousepad", 19.99, description = "Premium gaming surface",
-                imageRes = R.drawable.emojitest
+                imageRes = R.drawable.mousepadimage
             ),
         )
     }
@@ -208,9 +207,34 @@ private fun ProductCatalog(cartManager: ShoppingCartManager) {
         modifier = Modifier.fillMaxSize()
     ) {
          //Info sur la livraison gratuite
-        if (cartManager.itemCount > 0) {
-            val remaining = 100.0 - cartManager.subtotal
-            if (remaining > 0) {
+        /*if (cartManager.itemCount > 0) {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                )
+            ) {
+                Row(
+                    modifier = Modifier.padding(12.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        Icons.Default.ShoppingCart,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onPrimaryContainer
+                    )
+                    /*Text(
+                        text = "Only ${String.format("%.2f", remaining)} € left for free shipping!",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                    )*/
+                }
+            }
+            //val remaining = 100.0 - cartManager.subtotal
+            /*if (remaining > 0) {
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -263,8 +287,8 @@ private fun ProductCatalog(cartManager: ShoppingCartManager) {
                         )
                     }
                 }
-            }
-        }
+            }*/
+        }*/
 
         // Grille de produits
         LazyVerticalGrid(

@@ -1,5 +1,6 @@
 package com.example.projectintertionsdk
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -11,7 +12,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.test.PasswordStrengthTestApp
 import com.example.projectintertionsdk.sdk.ShoppingCart.test.ShoppingCartTestApp
 import com.example.projectintertionsdk.ui.theme.ProjectIntertionSDKTheme
 
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ProjectIntertionSDKTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize()) { _ ->
                     //PasswordStrengthTestApp()
                     ShoppingCartTestApp()
                 }

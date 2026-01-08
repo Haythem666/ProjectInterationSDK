@@ -22,7 +22,6 @@ class DefaultPasswordStrengthAlgorithm: PasswordStrengthAlgorithm{
             score == 4 -> PasswordStrength.MEDIUM
             score == 5 -> PasswordStrength.STRONG
             else -> PasswordStrength.VERY_STRONG
-
         }
     }
 }

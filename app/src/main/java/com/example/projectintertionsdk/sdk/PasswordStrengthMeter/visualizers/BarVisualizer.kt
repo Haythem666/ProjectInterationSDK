@@ -24,7 +24,6 @@ class BarVisualizer(
     @Composable
     override fun Visualize(strength: PasswordStrength, password: String) {
         Column(modifier = Modifier.fillMaxWidth()) {
-            //barre de progression
             LinearProgressIndicator(
                 progress = {strength.score/4f},
                 modifier = Modifier.fillMaxWidth().height(height).clip(RoundedCornerShape(4.dp)),

@@ -5,7 +5,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.core.DefaultPasswordStrengthAlgorithm
-import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.core.PasswordStrength
 import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.core.PasswordStrengthAlgorithm
 import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.visualizers.BarVisualizer
 import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.visualizers.PasswordStrengthVisualizer

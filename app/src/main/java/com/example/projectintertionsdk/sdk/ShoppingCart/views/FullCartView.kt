@@ -1,6 +1,5 @@
 package com.example.projectintertionsdk.sdk.ShoppingCart.views
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -39,6 +38,7 @@ import com.example.projectintertionsdk.sdk.ShoppingCart.core.ShoppingCartManager
 
 
 class FullCartView: CartView {
+
     @Composable
     override fun Display(
         cartManager: ShoppingCartManager,
@@ -106,7 +106,6 @@ class FullCartView: CartView {
         }
     }
 
-    @SuppressLint("DefaultLocale")
     @Composable
     private fun CartItemRow(item: CartItem, onIncrement: () -> Unit, onDecrement: () -> Unit, onRemove: () -> Unit){
         Card(
@@ -133,7 +132,6 @@ class FullCartView: CartView {
                         text = item.product.description,
                         style = MaterialTheme.typography.bodySmall,
                         //maxLines = 2,
-
                     )
 
                     Text(
@@ -232,7 +230,6 @@ class FullCartView: CartView {
                     text = "${String.format("%.2f", cartManager.total)} €",
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = Bold
-                    //color
                 )
             }
             Spacer(modifier = Modifier.height(8.dp))
@@ -242,7 +239,7 @@ class FullCartView: CartView {
                 modifier = Modifier.fillMaxWidth(),
                 enabled = !cartManager.isEmpty,
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Green,
+                    containerColor = Color(0xFF006837),
                     contentColor = Color.White
                 )
             ) {
