@@ -9,6 +9,7 @@ import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.core.PasswordSt
 import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.visualizers.BarVisualizer
 import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.visualizers.PasswordStrengthVisualizer
 
+
 @Composable
 fun PasswordStrengthMeter(
     password: String,

@@ -18,7 +18,6 @@ import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.core.PasswordSt
 
 class BarVisualizer(
     private val height: Dp = 8.dp,
-    private val showLabel: Boolean = true
 ) : PasswordStrengthVisualizer {
 
     @Composable
@@ -31,7 +30,7 @@ class BarVisualizer(
                 trackColor = Color.LightGray.copy(alpha = 0.3f)
             )
 
-            if(showLabel && password.isNotEmpty()) {
+            if(password.isNotEmpty()) {
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = strength.label,

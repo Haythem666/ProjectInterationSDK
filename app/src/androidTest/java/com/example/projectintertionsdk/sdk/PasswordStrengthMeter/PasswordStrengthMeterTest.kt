@@ -18,7 +18,7 @@ class PasswordStrengthMeterTest {
     @Test
     fun emptyPassword(){
         composeTestRule.setContent {
-            PasswordStrengthMeter(password = "", visualizer = BarVisualizer(showLabel = true))
+            PasswordStrengthMeter(password = "", visualizer = BarVisualizer())
         }
 
         composeTestRule.onNodeWithText("Very Weak").assertDoesNotExist()
@@ -29,7 +29,7 @@ class PasswordStrengthMeterTest {
         composeTestRule.setContent {
             PasswordStrengthMeter(
                 password = "weak1234",
-                visualizer = BarVisualizer(showLabel = true)
+                visualizer = BarVisualizer()
             )
         }
 
@@ -41,7 +41,7 @@ class PasswordStrengthMeterTest {
         composeTestRule.setContent {
             PasswordStrengthMeter(
                 password = "Abcd1234",
-                visualizer = BarVisualizer(showLabel = true)
+                visualizer = BarVisualizer()
             )
         }
 
@@ -53,7 +53,7 @@ class PasswordStrengthMeterTest {
         composeTestRule.setContent {
             PasswordStrengthMeter(
                 password = "Abcd1234!",
-                visualizer = BarVisualizer(showLabel = true)
+                visualizer = BarVisualizer()
             )
         }
 
@@ -65,7 +65,7 @@ class PasswordStrengthMeterTest {
         composeTestRule.setContent {
             PasswordStrengthMeter(
                 password = "Password12345??",
-                visualizer = BarVisualizer(showLabel = true)
+                visualizer = BarVisualizer()
             )
         }
 
@@ -80,7 +80,7 @@ class PasswordStrengthMeterTest {
         composeTestRule.setContent {
             PasswordStrengthMeter(
                 password = passwordState.value,
-                visualizer = BarVisualizer(showLabel = true)
+                visualizer = BarVisualizer()
             )
         }
 
