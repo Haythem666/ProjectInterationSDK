@@ -33,18 +33,20 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import com.example.projectintertionsdk.sdk.ShoppingCart.ShoppingCart
-import com.example.projectintertionsdk.sdk.ShoppingCart.core.DefaultCartCalculator
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import com.example.projectintertionsdk.sdk.ShoppingCart.core.ShoppingCartManager
-import com.example.projectintertionsdk.sdk.ShoppingCart.core.SimpleProduct
+import androidx.compose.ui.unit.dp
 import com.example.projectintertionsdk.R
 import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.PasswordStrengthMeter
+import com.example.projectintertionsdk.sdk.ShoppingCart.ShoppingCart
+import com.example.projectintertionsdk.sdk.ShoppingCart.core.DefaultCartCalculator
 import com.example.projectintertionsdk.sdk.ShoppingCart.core.Product
+import com.example.projectintertionsdk.sdk.ShoppingCart.core.ShoppingCartManager
+import com.example.projectintertionsdk.sdk.ShoppingCart.core.SimpleProduct
 
-
+/**
+ * A test application to demonstrate the shopping cart functionality.
+ */
 @Composable
 fun ShoppingCartTestApp() {
 
@@ -60,7 +62,7 @@ fun ShoppingCartTestApp() {
     var isCheckingOut by remember { mutableStateOf(false) }
     var password by remember { mutableStateOf("") }
 
-    MaterialTheme{
+    MaterialTheme {
 
         Scaffold(
             topBar = {
@@ -77,7 +79,7 @@ fun ShoppingCartTestApp() {
             ) {
                 if (showCart) {
 
-                    if (isCheckingOut){
+                    if (isCheckingOut) {
                         Column(modifier = Modifier.padding(16.dp)) {
                             Text("Complete your order", style = MaterialTheme.typography.headlineMedium)
                             Text("Please set a password for your account to continue.")
@@ -92,7 +94,7 @@ fun ShoppingCartTestApp() {
                                 modifier = Modifier.fillMaxWidth()
                             )
 
-                            Spacer(modifier= Modifier.padding(10.dp))
+                            Spacer(modifier = Modifier.padding(10.dp))
 
                             PasswordStrengthMeter(
                                 password = password
@@ -108,10 +110,10 @@ fun ShoppingCartTestApp() {
                             }
 
                         }
-                    }else {
+                    } else {
                         ShoppingCart(
                             cartManager = cartManager,
-                            onCheckout = {isCheckingOut = true}
+                            onCheckout = { isCheckingOut = true }
                         )
                     }
 
@@ -128,6 +130,11 @@ fun ShoppingCartTestApp() {
 
 }
 
+/**
+ * The top app bar for the shopping cart test app.
+ * @param cartManager The shopping cart manager.
+ * @param onCartClick A callback for when the cart icon is clicked.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun TopBar(
@@ -155,6 +162,10 @@ private fun TopBar(
     )
 }
 
+/**
+ * A catalog of products that can be added to the cart.
+ * @param cartManager The shopping cart manager.
+ */
 @Composable
 private fun ProductCatalog(cartManager: ShoppingCartManager) {
     val products = remember {
@@ -215,6 +226,11 @@ private fun ProductCatalog(cartManager: ShoppingCartManager) {
     }
 }
 
+/**
+ * A card that displays a single product.
+ * @param product The product to display.
+ * @param onAddToCart A callback for when the user adds the product to the cart.
+ */
 @Composable
 private fun ProductCard(
     product: Product,

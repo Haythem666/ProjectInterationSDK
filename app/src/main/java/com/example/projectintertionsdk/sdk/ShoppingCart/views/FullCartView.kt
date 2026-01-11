@@ -20,7 +20,6 @@ import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
-import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -36,9 +35,16 @@ import androidx.compose.ui.unit.dp
 import com.example.projectintertionsdk.sdk.ShoppingCart.core.CartItem
 import com.example.projectintertionsdk.sdk.ShoppingCart.core.ShoppingCartManager
 
-
+/**
+ * A full-screen view of the shopping cart.
+ */
 class FullCartView: CartView {
 
+    /**
+     * Displays the full shopping cart UI.
+     * @param cartManager The shopping cart manager.
+     * @param onCheckout A callback for when the user wants to checkout.
+     */
     @Composable
     override fun Display(
         cartManager: ShoppingCartManager,
@@ -70,6 +76,10 @@ class FullCartView: CartView {
         }
     }
 
+    /**
+     * The header for the shopping cart.
+     * @param cartManager The shopping cart manager.
+     */
     @Composable
     private fun CartHeader(cartManager: ShoppingCartManager){
         Row(
@@ -106,6 +116,13 @@ class FullCartView: CartView {
         }
     }
 
+    /**
+     * A row that displays a single cart item.
+     * @param item The cart item to display.
+     * @param onIncrement A callback to increment the item quantity.
+     * @param onDecrement A callback to decrement the item quantity.
+     * @param onRemove A callback to remove the item from the cart.
+     */
     @Composable
     private fun CartItemRow(item: CartItem, onIncrement: () -> Unit, onDecrement: () -> Unit, onRemove: () -> Unit){
         Card(
@@ -197,6 +214,11 @@ class FullCartView: CartView {
         }
     }
 
+    /**
+     * The summary section of the shopping cart.
+     * @param cartManager The shopping cart manager.
+     * @param onCheckout A callback for when the user wants to checkout.
+     */
     @Composable
     private fun CartSummary(cartManager: ShoppingCartManager, onCheckout: () -> Unit){
 
@@ -249,6 +271,12 @@ class FullCartView: CartView {
         }
     }
 
+    /**
+     * A row that displays a summary line item.
+     * @param label The label for the line item.
+     * @param value The value of the line item.
+     * @param note An optional note to display instead of the value.
+     */
     @Composable
     private fun SummaryRow(label: String, value: Double, note: String? = null){
 

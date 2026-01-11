@@ -9,7 +9,17 @@ import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.core.PasswordSt
 import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.visualizers.BarVisualizer
 import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.visualizers.PasswordStrengthVisualizer
 
-
+/**
+ * A Composable that displays the strength of a given password.
+ *
+ * This component uses a [PasswordStrengthAlgorithm] to calculate the strength
+ * and a [PasswordStrengthVisualizer] to display it.
+ *
+ * @param password The password to evaluate.
+ * @param modifier The modifier to be applied to the layout.
+ * @param algorithm The algorithm used to calculate the password strength.
+ * @param visualizer The visualizer used to display the password strength.
+ */
 @Composable
 fun PasswordStrengthMeter(
     password: String,

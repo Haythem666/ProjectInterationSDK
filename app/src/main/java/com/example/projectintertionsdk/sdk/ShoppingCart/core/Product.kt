@@ -1,5 +1,8 @@
 package com.example.projectintertionsdk.sdk.ShoppingCart.core
 
+/**
+ * Defines the basic properties of a product.
+ */
 interface Product {
     val id: String
     val name: String
@@ -8,6 +11,9 @@ interface Product {
     val description: String
 }
 
+/**
+ * A simple data class implementation of the [Product] interface.
+ */
 data class SimpleProduct (
     override val id: String,
     override val name: String,

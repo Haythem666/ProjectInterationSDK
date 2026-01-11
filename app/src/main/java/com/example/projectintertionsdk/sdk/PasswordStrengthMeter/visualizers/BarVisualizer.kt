@@ -16,10 +16,23 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.projectintertionsdk.sdk.PasswordStrengthMeter.core.PasswordStrength
 
+/**
+ * A [PasswordStrengthVisualizer] that displays the password strength as a horizontal bar.
+ *
+ * The color of the bar changes based on the password strength.
+ *
+ * @param height The height of the progress bar.
+ */
 class BarVisualizer(
     private val height: Dp = 8.dp,
 ) : PasswordStrengthVisualizer {
 
+    /**
+     * Renders the password strength indicator.
+     *
+     * @param strength The calculated password strength.
+     * @param password The password being evaluated.
+     */
     @Composable
     override fun Visualize(strength: PasswordStrength, password: String) {
         Column(modifier = Modifier.fillMaxWidth()) {
