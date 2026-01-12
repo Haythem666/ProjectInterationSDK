@@ -1,4 +1,4 @@
-package com.example.projectintertionsdk.sdk.ShoppingCart.test
+package com.example.projectintertionsdk.test
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -45,10 +45,10 @@ import com.example.projectintertionsdk.sdk.ShoppingCart.core.ShoppingCartManager
 import com.example.projectintertionsdk.sdk.ShoppingCart.core.SimpleProduct
 
 /**
- * A test application to demonstrate the shopping cart functionality.
+ * A test application to demonstrate the app.
  */
 @Composable
-fun ShoppingCartTestApp() {
+fun TestApp() {
 
     val cartManager = remember {
         ShoppingCartManager(
@@ -131,7 +131,7 @@ fun ShoppingCartTestApp() {
 }
 
 /**
- * The top app bar for the shopping cart test app.
+ * The top app bar for the test app.
  * @param cartManager The shopping cart manager.
  * @param onCartClick A callback for when the cart icon is clicked.
  */

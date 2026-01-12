@@ -75,7 +75,7 @@ class PasswordStrengthMeterTest {
     @Test
     fun passwordChange(){
 
-        var passwordState = mutableStateOf("weak")
+        val passwordState = mutableStateOf("weak")
 
         composeTestRule.setContent {
             PasswordStrengthMeter(
@@ -94,7 +94,6 @@ class PasswordStrengthMeterTest {
     @Test
     fun evaluateLength(){
         val algo = DefaultPasswordStrengthAlgorithm()
-
 
         val shortPassword= algo.calculate("abc123")
         assert(shortPassword == PasswordStrength.VERY_WEAK || shortPassword == PasswordStrength.WEAK)
