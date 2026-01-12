@@ -71,7 +71,6 @@ class FullCartView: CartView {
 
             }
 
-
             CartSummary(cartManager, onCheckout)
         }
     }
@@ -148,7 +147,6 @@ class FullCartView: CartView {
                     Text(
                         text = item.product.description,
                         style = MaterialTheme.typography.bodySmall,
-                        //maxLines = 2,
                     )
 
                     Text(
@@ -231,8 +229,6 @@ class FullCartView: CartView {
 
             if(cartManager.shipping > 0){
                 SummaryRow("Shipping", cartManager.shipping)
-            } else if (cartManager.itemCount > 0){
-                SummaryRow("Shipping",0.0,"Free!")
             }
 
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
